@@ -1,0 +1,139 @@
+---
+title: "How to upload files using NodeJS (Updated)" 
+description: "Pariatur quis culpa sint non elit anim minim in dolore sunt. Sint ipsum labore ex excepteur mollit aute non. Ad enim proident et dolore culpa magna ad. Aliqua deserunt proident tempor in mollit Lorem dolore veniam. Sit reprehenderit anim id mollit ad aliquip ullamco et velit nostrud dolor minim. Nostrud ipsum commodo enim velit eiusmod ut esse sit quis."
+img: "https://picsum.photos/700/400"
+tags: "android, ios, flutter"
+---
+
+
+### Here is a quick tip on how to upload a file into Node server.
+
+Exercitation ad ex Lorem sunt aute in dolor nulla voluptate ex laborum voluptate. Enim dolore sint nisi duis id. Consequat laborum laborum ad consequat ex labore consequat laborum dolor nulla pariatur sint enim in. Sint adipisicing quis mollit reprehenderit est sunt Lorem exercitation ad do consectetur ullamco eu. Mollit cillum deserunt ullamco non ea. Tempor excepteur tempor incididunt non pariatur Lorem est aute culpa sint enim commodo. Consectetur ad adipisicing eiusmod dolore ea deserunt sint nostrud nisi qui.
+
+
+### Here is a comparison table
+
+| Column 1 | Column 2 | Column 3 | Column 4 |
+|----------|----------|----------|----------|
+|   Row 1  |   Row 1  |   Row 1  |   Row 1  |
+|   Row 2  |   Row 2  |   Row 2  |   Row 2  |
+|   Row 3  |   Row 3  |   Row 3  |   Row 3  |
+
+You can read more about it [here](https://link-url-here.org). 
+
+_This is written in italic format just to confirm if this is working correctly._
+
+<mark>PLUSSSSSSS ULTRAAAAAAAAAA </mark>
+
+> This is a block quote. This
+paragraph has two lines.
+
+> This is a block quote. This
+> paragraph has two lines.
+>
+> 1. This is a list inside a block quote.
+> 2. Second item.
+
+<img src="https://picsum.photos/id/237/200/300" height="200px" />
+
+### Usage of Redux in a React Application
+
+Redux is a predictable state container for JavaScript apps, particularly those built with React. It helps manage the state of an application in a centralized manner, making it easier to track and update the state across different components.
+
+To use Redux in a React application, follow these steps:
+
+1. Install Redux and React Redux packages:
+    ```
+    npm install redux react-redux
+    ```
+
+2. Create a Redux store:
+    ```javascript
+    import { createStore } from 'redux';
+    import rootReducer from './reducers';
+
+    const store = createStore(rootReducer);
+    ```
+
+3. Define actions:
+    ```javascript
+    export const increment = () => {
+      return {
+         type: 'INCREMENT'
+      };
+    };
+
+    export const decrement = () => {
+      return {
+         type: 'DECREMENT'
+      };
+    };
+    ```
+
+4. Create reducers:
+    ```javascript
+    const initialState = {
+      count: 0
+    };
+
+    const rootReducer = (state = initialState, action) => {
+      switch (action.type) {
+         case 'INCREMENT':
+            return {
+              ...state,
+              count: state.count + 1
+            };
+         case 'DECREMENT':
+            return {
+              ...state,
+              count: state.count - 1
+            };
+         default:
+            return state;
+      }
+    };
+
+    export default rootReducer;
+    ```
+
+5. Connect components to the Redux store:
+    ```javascript
+    import { connect } from 'react-redux';
+    import { increment, decrement } from './actions';
+
+    const Counter = ({ count, increment, decrement }) => {
+      return (
+         <div>
+            <button onClick={increment}>+</button>
+            <span>{count}</span>
+            <button onClick={decrement}>-</button>
+         </div>
+      );
+    };
+
+    const mapStateToProps = (state) => {
+      return {
+         count: state.count
+      };
+    };
+
+    export default connect(mapStateToProps, { increment, decrement })(Counter);
+    ```
+
+6. Wrap the root component with the Redux Provider:
+    ```javascript
+    import { Provider } from 'react-redux';
+    import store from './store';
+
+    const App = () => {
+      return (
+         <Provider store={store}>
+            <Counter />
+         </Provider>
+      );
+    };
+
+    export default App;
+    ```
+
+By following these steps, you can effectively use Redux in your React application to manage the state and enable predictable data flow.

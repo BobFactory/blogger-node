@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teaching Patterns | Home Page</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- TODO: Configure the below meta data -->
+  <!-- Meta Data Links -->
+  <meta property="og:title" content="Teaching Patterns | Home Page">
+  <meta property="og:description" content="Your Blog Description">
+  <meta property="og:image" content="https://example.com/your-blog-image.jpg">
+  <meta property="og:url" content="https://example.com/your-blog-url">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Your Blog Title">
+  <meta name="twitter:description" content="Your Blog Description">
+  <meta name="twitter:image" content="https://example.com/your-blog-image.jpg">
+  <meta name="twitter:url" content="https://example.com/your-blog-url">
+  <meta name="twitter:site" content="@your-twitter-handle">
+  <meta property="article:publisher" content="https://www.facebook.com/your-facebook-page">
+  <meta property="article:author" content="https://www.facebook.com/your-facebook-profile">
+</head>
+
+<body>
+  <%- include('partials/navbar') %>
+
+  <!-- Hero Section -->
+  <%- include('partials/hero') %>
+
+  <div class="mx-auto max-w-screen-xl px-4 md:px-6 lg:px-8">
+    <h3 class="my-8 text-xl font-semibold underline underline-offset-2 tracking-wide">Latest Posts</h3>
+    
+    <!-- Blog Cards -->
+    <div class="my-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8 md:grid-cols-2 md:gap-6 ">
+      <% for (let i=0; i < blogPosts.length; i++) { %>
+      <%- include('partials/blog_card', { blog: blogPosts[i] }) %>
+      <% } %>
+    </div>
+
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+
+</html>

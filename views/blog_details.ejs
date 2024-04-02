@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= blog.title %></title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link href='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/base16/material.min.css' rel='stylesheet' />
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+
+
+  <!-- languages -->
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/dart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/kotlin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/swift.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/javascript.min.js"></script>
+
+
+  <!-- Meta Data Links -->
+  <meta property="og:title" content="<%= blog.title %>">
+  <meta property="og:description" content="<%= blog.description %>">
+  <meta property="og:image" content="<%= blog.img %>">
+  <meta property="og:url" content="https://teachingpatterns.com/blogs/<%= blog.slug %>">
+  <meta name="twitter:card" content="<%= blog.img %>">
+  <meta name="twitter:title" content="<%= blog.title %>">
+  <meta name="twitter:description" content="<%= blog.description %>">
+  <meta name="twitter:image" content="<%= blog.img %>">
+  <meta name="twitter:url" content="https://teachingpatterns.com/blogs/<%= blog.slug %>">
+  <meta name="twitter:site" content="@bawender58">
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="https://www.linkedin.com/in/bawenderyandra">
+  <meta property="og:article:published_time" content="<%= blog.createdAt %>">
+
+
+  <style>
+    h3::before {
+      content: "#";
+      margin-right: 0.5rem;
+      font-weight: lighter;
+      color: lightgray;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.05rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.05rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-block: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    mark {
+      background: linear-gradient(-100deg, hsla(48, 92%, 75%, .3), hsla(48, 92%, 75%, .7) 95%, hsla(48, 92%, 75%, .1));
+      border-radius: 1em 0;
+      padding: .5rem;
+    }
+
+    blockquote {
+      background: #f9f9f9;
+      border-left: 5px solid #ccc;
+      margin: 1.5em 10px;
+      padding: 0.5em 10px;
+      quotes: "\201C""\201D""\2018""\2019";
+    }
+
+    blockquote p {
+      display: inline;
+    }
+
+
+    code {
+      background: hsla(48, 92%, 75%, 0.506);
+      color: black;
+      font-weight: bold;
+      font-size: 0.9rem;
+      display: inline;
+      padding: 4px 8px;
+    }
+
+    pre code {
+      font-weight: normal;
+      font-size: 0.8rem;
+    }
+
+    ul {
+      padding: 0;
+      margin: 2% 0;
+      max-width: 700px;
+      position: relative;
+    }
+
+    li {
+      padding: 0.5rem 1.5rem 1rem;
+      border-radius: 0.5rem;
+      /* background: peachpuff; */
+      background: hsla(48, 92%, 75%, 0.507);
+    }
+
+    li+li {
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <%- include('partials/navbar') %>
+
+  <div class="mx-[8%] lg:mx-[25%] md:mx-[18%] ">
+    <h1 class="my-8 font-bold text-3xl"><%= blog.title %></h1>
+    <img src="<%= blog.img %>" alt="Blog Post Image" class="bg-gradient-to-br from-[#8a6ee9] to-[#d9a6f0] h-[32rem] w-full object-contain object-center">
+    <div class="my-10" id="blog-content"><%- blog.content %></div>
+  </div>
+
+  <%- include('partials/footer') %>
+
+  <script>
+    hljs.highlightAll();
+  </script>
+</body>
+
+</html>

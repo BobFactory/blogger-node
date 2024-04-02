@@ -1,0 +1,22 @@
+<article>
+  <a href="/blogs/<%= blog.slug %>">
+    <img alt="Blog Post Image" src="<%= blog.img %>" class="h-72 w-full rounded-xl object-contain bg-gradient-to-br from-[#8a6ee9] to-[#d9a6f0] shadow-xl transition group-hover:grayscale-[50%]" />
+
+    <div class="p-4">
+      <h3 class="text-lg font-medium text-gray-900"><%= blog.title %></h3>
+
+      <p class="mt-2 line-clamp-4 text-md/relaxed text-gray-600">
+        <%= blog.description %>
+      </p>
+
+      <p class="text-sm text-gray-500 mt-4 tracking-wide font-medium"><%= formatDate(blog.createdAt) %></p>
+    </div>
+  </a>
+
+  <!-- format blog date to make it readable -->
+  <% function formatDate(date) { %>
+  <% return date.toLocaleDateString('en-US', { weekday: 'short',  day: 'numeric',  month: 'long',  year: 'numeric'}) %>
+  <% } %>
+
+</article>
+
